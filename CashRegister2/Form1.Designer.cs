@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(crazyCookiesSuppliesForm));
             this.newOrderButton = new System.Windows.Forms.Button();
             this.receiptLabel = new System.Windows.Forms.Label();
             this.receiptButton = new System.Windows.Forms.Button();
@@ -45,6 +46,12 @@
             this.cuttingBoardsLabel = new System.Windows.Forms.Label();
             this.knivesLabel = new System.Windows.Forms.Label();
             this.pansLabel = new System.Windows.Forms.Label();
+            this.subTotalLabel2 = new System.Windows.Forms.Label();
+            this.taxLabel2 = new System.Windows.Forms.Label();
+            this.totalLabel2 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.changeLabel2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // newOrderButton
@@ -62,12 +69,13 @@
             // receiptLabel
             // 
             this.receiptLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.receiptLabel.BackColor = System.Drawing.Color.Gainsboro;
+            this.receiptLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.receiptLabel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receiptLabel.Location = new System.Drawing.Point(569, 9);
             this.receiptLabel.Name = "receiptLabel";
             this.receiptLabel.Size = new System.Drawing.Size(528, 566);
             this.receiptLabel.TabIndex = 32;
+            this.receiptLabel.Click += new System.EventHandler(this.receiptLabel_Click);
             // 
             // receiptButton
             // 
@@ -85,7 +93,7 @@
             // 
             this.changeLabel.AutoSize = true;
             this.changeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeLabel.Location = new System.Drawing.Point(65, 535);
+            this.changeLabel.Location = new System.Drawing.Point(65, 537);
             this.changeLabel.Name = "changeLabel";
             this.changeLabel.Size = new System.Drawing.Size(77, 24);
             this.changeLabel.TabIndex = 30;
@@ -105,7 +113,7 @@
             // 
             // tenderedInput
             // 
-            this.tenderedInput.Location = new System.Drawing.Point(191, 419);
+            this.tenderedInput.Location = new System.Drawing.Point(239, 414);
             this.tenderedInput.Name = "tenderedInput";
             this.tenderedInput.Size = new System.Drawing.Size(100, 20);
             this.tenderedInput.TabIndex = 28;
@@ -171,7 +179,7 @@
             // 
             // knivesInput
             // 
-            this.knivesInput.Location = new System.Drawing.Point(261, 93);
+            this.knivesInput.Location = new System.Drawing.Point(295, 89);
             this.knivesInput.Name = "knivesInput";
             this.knivesInput.Size = new System.Drawing.Size(44, 20);
             this.knivesInput.TabIndex = 21;
@@ -179,7 +187,7 @@
             // 
             // pansInput
             // 
-            this.pansInput.Location = new System.Drawing.Point(261, 33);
+            this.pansInput.Location = new System.Drawing.Point(295, 33);
             this.pansInput.Name = "pansInput";
             this.pansInput.Size = new System.Drawing.Size(44, 20);
             this.pansInput.TabIndex = 20;
@@ -215,11 +223,72 @@
             this.pansLabel.TabIndex = 17;
             this.pansLabel.Text = "Number of Pans";
             // 
+            // subTotalLabel2
+            // 
+            this.subTotalLabel2.AutoSize = true;
+            this.subTotalLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subTotalLabel2.Location = new System.Drawing.Point(236, 263);
+            this.subTotalLabel2.Name = "subTotalLabel2";
+            this.subTotalLabel2.Size = new System.Drawing.Size(0, 24);
+            this.subTotalLabel2.TabIndex = 34;
+            // 
+            // taxLabel2
+            // 
+            this.taxLabel2.AutoSize = true;
+            this.taxLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxLabel2.Location = new System.Drawing.Point(236, 320);
+            this.taxLabel2.Name = "taxLabel2";
+            this.taxLabel2.Size = new System.Drawing.Size(0, 24);
+            this.taxLabel2.TabIndex = 35;
+            // 
+            // totalLabel2
+            // 
+            this.totalLabel2.AutoSize = true;
+            this.totalLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel2.Location = new System.Drawing.Point(236, 368);
+            this.totalLabel2.Name = "totalLabel2";
+            this.totalLabel2.Size = new System.Drawing.Size(0, 24);
+            this.totalLabel2.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(606, 346);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 24);
+            this.label2.TabIndex = 38;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(606, 298);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 24);
+            this.label3.TabIndex = 37;
+            // 
+            // changeLabel2
+            // 
+            this.changeLabel2.AutoSize = true;
+            this.changeLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeLabel2.Location = new System.Drawing.Point(236, 537);
+            this.changeLabel2.Name = "changeLabel2";
+            this.changeLabel2.Size = new System.Drawing.Size(0, 24);
+            this.changeLabel2.TabIndex = 39;
+            // 
             // crazyCookiesSuppliesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(1212, 668);
+            this.Controls.Add(this.changeLabel2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.totalLabel2);
+            this.Controls.Add(this.taxLabel2);
+            this.Controls.Add(this.subTotalLabel2);
             this.Controls.Add(this.newOrderButton);
             this.Controls.Add(this.receiptLabel);
             this.Controls.Add(this.receiptButton);
@@ -237,8 +306,10 @@
             this.Controls.Add(this.cuttingBoardsLabel);
             this.Controls.Add(this.knivesLabel);
             this.Controls.Add(this.pansLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "crazyCookiesSuppliesForm";
             this.Text = "Crazy Cooking Supplies";
+            this.Load += new System.EventHandler(this.crazyCookiesSuppliesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,6 +334,12 @@
         private System.Windows.Forms.Label cuttingBoardsLabel;
         private System.Windows.Forms.Label knivesLabel;
         private System.Windows.Forms.Label pansLabel;
+        private System.Windows.Forms.Label subTotalLabel2;
+        private System.Windows.Forms.Label taxLabel2;
+        private System.Windows.Forms.Label totalLabel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label changeLabel2;
     }
 }
 
